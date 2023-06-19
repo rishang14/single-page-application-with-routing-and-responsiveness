@@ -1,23 +1,23 @@
-import {  Route, Routes } from "react-router-dom"; 
+import { Route, Routes } from "react-router-dom";
+import Header from "./component/Header";
+import Home from "./component/Home";
+import Footer from "./component/Footer";
+import Contact from "./component/Contact";
+import Services from "./component/Services";
+import "./styles/App.scss";
 
-import Header from "./component/Header" 
-import Home from "./component/Home"
-import "./styles/App.scss"
-
-
-
-
-const  App=()=> {
-  return ( 
+const App = () => {
+  return (
     <>
- 
-        <Routes>     
-      <Route path="/" element={<Header/>}>
-        <Route index element={<Home/>} /> 
-      </Route>  
+      <Header />
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/services" element={<Services />} />
       </Routes>
+      <Footer />
     </>
   );
-}
+};
 
 export default App;
